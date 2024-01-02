@@ -1,0 +1,44 @@
+
+{% extends 'app1/home.html '%}
+{% block title%}song{%endblock title %}
+
+{% block contants %}
+<form action="">
+    <table border="1" cellpadding="12px">
+        <tr>
+            <th>client_name</th>
+            <th>guardian_type</th>
+            <th>guardian_name</th>
+            <th>DOB</th>
+            <th>mobile_no</th>
+            <th>additional_mobile_no</th>
+            <th>address</th>
+            <th>state</th>
+            <th>district</th>
+            <th>city</th>
+            <th>next_follow_up_date</th>
+            <th>notes</th>
+            <td>record_updated_on</td>
+        </tr>
+        {% for i in pi %}
+        <tr>
+            <td>{{i.client_name}}</td>
+            <td>{{i.guardian_type}}</td>
+            <td>{{i.guardian_name}}</td>
+            <td>{{i.dob}}</td>
+            <td>{{i.mobile_no}}</td>
+            <td>{{i.additional_mobile_no}}</td>
+            <td>{{i.address}}</td>
+            <td>{{i.state}}</td>
+            <td>{{i.district}}</td>
+            <td>{{i.city}}</td>
+            <td>{{i.next_follow_up_date}}</td>
+            <td>{{i.notes}}</td>
+            <td>{{i.record_updated_on}}</td>
+
+        </tr>
+        {% endfor%}
+    </table>
+</form>
+
+{% endblock contants %}
