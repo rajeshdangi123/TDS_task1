@@ -2,8 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.http import JsonResponse
 from app1.models import SaleEnquiry
-
-
+import logging
+logger = logging.getLogger(__name__)
 def home(request):
     return render(request, "app1/home.html")
 
@@ -54,5 +54,8 @@ def create_data(request):
 
 # Create your views here.
 def read(request):
-    pi = SaleEnquiry.objects.all()
-    return render(request, "app1/read.html", {"pi": pi})
+    try:
+        pi = SaleEnquiry.objects.all()
+        return render(request, "app1/read.html", {"pi": pi})
+    except Exception as e:
+        logger.error(f"An error occurred: {e}")

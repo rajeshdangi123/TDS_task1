@@ -26,6 +26,7 @@ SECRET_KEY = "django-insecure-*!(a-ou6n^@%^+h$ookq^@09_6&*55$s^+-!!u(9uj+nuazjl_
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#from djongo import models
 
 
 # Application definition
